@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.sampleproject.web.skill.SkillBrowse"
+        focusComponent="skillsTable"
+        lookupComponent="skillsTable"
+        messagesPack="com.company.sampleproject.web.skill">
+    <dsContext>
+        <groupDatasource id="skillsDs"
+                         class="com.company.sampleproject.entity.Skill"
+                         view="skill-view">
+            <query>
+                <![CDATA[select e from sampleproject$Skill e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="skillsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="skillsTable"
+                datasource="skillsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="skillsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <group>
+                    <column id="skillcategory"/>
+                </group>
+                <column id="skill"/>
+            </columns>
+            <rows datasource="skillsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="skillsTable.create"/>
+                <button id="editBtn"
+                        action="skillsTable.edit"/>
+                <button id="removeBtn"
+                        action="skillsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

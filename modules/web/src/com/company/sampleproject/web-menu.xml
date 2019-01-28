@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-sampleproject"
+          insertBefore="administration">
+        <item screen="sampleproject$User.browse"/>
+        <item screen="sampleproject$Skill.browse"/>
+        <item screen="sampleproject$Skillcategory.browse"/>
+        <item screen="sampleproject$UserSkillLink.browse"/>
+    </menu>
+</menu-config>

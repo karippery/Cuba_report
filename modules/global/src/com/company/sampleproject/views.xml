@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.sampleproject.entity.Skill"
+          extends="_local"
+          name="skill-view">
+        <property name="skillcategory"
+                  view="_minimal">
+        </property>
+    </view>
+    <view class="com.company.sampleproject.entity.User"
+          extends="_local"
+          name="user-view"
+          systemProperties="true">
+        <property name="uerskilllink"
+                  view="userSkillLink-view">
+        </property>
+    </view>
+    <view class="com.company.sampleproject.entity.UserSkillLink"
+          extends="_local"
+          name="userSkillLink-view"
+          systemProperties="true">
+        <property name="skill"
+                  view="_minimal">
+            <property name="skillcategory"
+                      view="_minimal">
+            </property>
+        </property>
+        <property name="user"
+                  view="_minimal">
+            <property name="name"/>
+        </property>
+    </view>
+</views>

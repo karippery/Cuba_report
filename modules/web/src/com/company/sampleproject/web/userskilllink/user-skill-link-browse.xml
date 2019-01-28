@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.sampleproject.web.userskilllink.UserSkillLinkBrowse"
+        focusComponent="userSkillLinksTable"
+        lookupComponent="userSkillLinksTable"
+        messagesPack="com.company.sampleproject.web.userskilllink">
+    <dsContext>
+        <datasource id="userSkillLinkDs"
+                    class="com.company.sampleproject.entity.UserSkillLink"
+                    view="userSkillLink-view"/>
+        <groupDatasource id="userSkillLinksDs"
+                         class="com.company.sampleproject.entity.UserSkillLink"
+                         view="_minimal">
+            <query>
+                <![CDATA[select e from sampleproject$UserSkillLink e
+where e.user.id = :ds$userSkillLinkDs
+order by e.skill ASC]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="userSkillLinksTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="userSkillLinksTable"
+                datasource="userSkillLinksDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="userSkillLinksTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="skill"/>
+            </columns>
+            <rows datasource="userSkillLinksDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="userSkillLinksTable.create"/>
+                <button id="editBtn"
+                        action="userSkillLinksTable.edit"/>
+                <button id="removeBtn"
+                        action="userSkillLinksTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

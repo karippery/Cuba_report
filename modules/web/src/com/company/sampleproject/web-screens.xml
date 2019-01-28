@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="sampleproject$User.browse"
+            template="com/company/sampleproject/web/user/user-browse.xml"/>
+    <screen id="sampleproject$Skill.browse"
+            template="com/company/sampleproject/web/skill/skill-browse.xml"/>
+    <screen id="sampleproject$Skill.edit"
+            template="com/company/sampleproject/web/skill/skill-edit.xml"/>
+    <screen id="sampleproject$Skillcategory.browse"
+            template="com/company/sampleproject/web/skillcategory/skillcategory-browse.xml"/>
+    <screen id="sampleproject$Skillcategory.edit"
+            template="com/company/sampleproject/web/skillcategory/skillcategory-edit.xml"/>
+    <screen id="sampleproject$UserSkillLink.browse"
+            template="com/company/sampleproject/web/userskilllink/user-skill-link-browse.xml"/>
+    <screen id="sampleproject$UserSkillLink.edit"
+            template="com/company/sampleproject/web/userskilllink/user-skill-link-edit.xml"/>
+    <screen id="sampleproject$User.edit"
+            template="com/company/sampleproject/web/user/user-edit.xml"/>
+</screen-config>

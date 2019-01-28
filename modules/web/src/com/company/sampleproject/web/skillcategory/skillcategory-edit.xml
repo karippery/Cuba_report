@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.sampleproject.web.skillcategory.SkillcategoryEdit"
+        datasource="skillcategoryDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.sampleproject.web.skillcategory">
+    <dsContext>
+        <datasource id="skillcategoryDs"
+                    class="com.company.sampleproject.entity.Skillcategory"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="skillcategoryDs">
+            <column width="250px">
+                <field property="name"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.sampleproject.web.user.UserEdit"
+        datasource="userDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.sampleproject.web.user">
+    <dsContext>
+        <datasource id="userDs"
+                    class="com.company.sampleproject.entity.User"
+                    loadDynamicAttributes="true"
+                    view="user-view">
+            <groupDatasource id="skillDs"
+                             property="uerskilllink"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="userDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="position"/>
+            </column>
+        </fieldGroup>
+        <tabSheet>
+            <tab id="skillsTab"
+                 caption="msg://Skills"
+                 margin="true,false,true,false"
+                 spacing="true">
+                <buttonsPanel id="skillsButtons">
+                    <button id="skillTableAdd"
+                            action="skillTable.create"/>
+                    <button id="skillTableEdit"
+                            action="skillTable.edit"/>
+                    <button id="skillTableRemove"
+                            action="skillTable.remove"/>
+                </buttonsPanel>
+            </tab>
+        </tabSheet>
+        <groupTable id="skillTable"
+                    multiLineCells="true"
+                    width="699px">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="skill.skillcategory"/>
+                <column id="skill.skill"/>
+            </columns>
+            <rows datasource="skillDs"/>
+            <rowsCount/>
+        </groupTable>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
